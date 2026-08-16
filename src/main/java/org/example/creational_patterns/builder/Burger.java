@@ -1,6 +1,6 @@
-package org.example.creational_patterns;
+package org.example.creational_patterns.builder;
 
-public class BuilderPattern {
+public class Burger {
 
     // Let's consider we are constructing burger
 
@@ -12,7 +12,7 @@ public class BuilderPattern {
     private final boolean tomato;   // Optional
 
     // 1. Private constructor: Forces instantiation exclusively through the Builder
-    private BuilderPattern(Builder builder) {
+    private Burger(Builder builder) {
         this.bun = builder.bun;
         this.patty = builder.patty;
         this.cheese = builder.cheese;
@@ -71,8 +71,8 @@ public class BuilderPattern {
         }
 
         // 3. The final "wrap it up" step
-        public BuilderPattern build() {
-            return new BuilderPattern(this);
+        public Burger build() {
+            return new Burger(this);
         }
     }
 }

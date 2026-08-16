@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.creational_patterns.BuilderPattern;
-import org.example.creational_patterns.LombokBuilderPattern;
+import org.example.creational_patterns.factoryMethod.Drink;
+import org.example.creational_patterns.factoryMethod.DrinkFactory;
 
 public class Main {
 
@@ -36,6 +36,13 @@ public class Main {
                 .build();
         System.out.println(lombokBuilderPattern);
          */
+
+        // Factory Method pattern
+        Drink latte = DrinkFactory.createDrink("LATTE");
+        latte.prepare();
+        Drink espresso = DrinkFactory.createDrink("ESPRESSO");
+        espresso.prepare();
+
     }
 
 }

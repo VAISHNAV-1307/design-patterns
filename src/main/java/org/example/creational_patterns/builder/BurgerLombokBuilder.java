@@ -1,6 +1,6 @@
-package org.example.creational_patterns;
+package org.example.creational_patterns.builder;
 
-public class LombokBuilderPattern {
+public class BurgerLombokBuilder {
 
     // All fields are final because once the burger is served, you can't alter it (immutability)
     private final String bun;
@@ -10,7 +10,7 @@ public class LombokBuilderPattern {
     private final boolean tomato;
 
     // 1. Private constructor: Forces instantiation exclusively through the Builder
-    private LombokBuilderPattern(Builder builder) {
+    private BurgerLombokBuilder(Builder builder) {
         this.bun = builder.bun;
         this.patty = builder.patty;
         this.cheese = builder.cheese;
@@ -76,8 +76,8 @@ public class LombokBuilderPattern {
         }
 
         // 3. The final "wrap it up" step
-        public LombokBuilderPattern build() {
-            return new LombokBuilderPattern(this);
+        public BurgerLombokBuilder build() {
+            return new BurgerLombokBuilder(this);
         }
     }
 }
